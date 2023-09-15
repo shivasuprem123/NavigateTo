@@ -1,0 +1,41 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url('wall.jpg'); /* Background image of the page */
+    background-size: cover;
+}
+
+/* Style the frosted glass rectangle container */
+.glass-container {
+    width: 400px;
+    height: 200px;
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
+    backdrop-filter: blur(10px); /* Apply the blur effect */
+    border-radius: 20px; /* Curved corners */
+    position: relative;
+    overflow: hidden; /* Hide the pseudo-element overflow */
+}
+
+/* Pseudo-element for the frosted glass effect */
+.glass-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: inherit;
+    filter: blur(20px); /* Increase blur for a stronger effect */
+    opacity: 0.8; /* Adjust opacity as needed */
+}
+
+/* Content inside the frosted glass container */
+.content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 20px;
+}
